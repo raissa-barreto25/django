@@ -1,11 +1,10 @@
 {% extends "blog/base.html" %} 
-
-{% block content%} 
-    {% for post in post_list %}
-        <article class="post">
-            <time>published: {{post.published_date}}</time>
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
-            <p>{{ post.text|truncatewords:20|linebreaksbr }}</p>
-        </article>
-    {% endfor %}
-{% endblock  %}
+    {% block content%} 
+        {% for post in post_list %}
+            <article class="post">
+                <time>published: {{post.published_date}}</time>
+                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h2>
+                <p>{{ post.text|truncatewords:20|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
+    {% endblock  %}
